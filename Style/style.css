@@ -49,9 +49,24 @@ nav {
     }
 }
 
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    nav .links ul {
+        margin: 0 0 0 -15px;
+    }
+
+    nav {
+        background-color: rgb(0 0 0 / 78%);
+    }
+
+    nav .text a {
+        display: flex;
+        text-align: center;
+    }
+}
+
 nav .text a {
     text-decoration: none;
-    color:  #cb0505;
+    color:  #01a7aa;
     font-size: 24px;
     padding: 18px 40px;
     font-weight: 500;
@@ -66,7 +81,7 @@ nav.scrolled {
 nav .links ul {
     display: flex;
     list-style: none;
-    padding-right: 70px;
+    padding-right: 50px;
 }
 
 nav .links ul li {
@@ -98,7 +113,7 @@ nav .links ul li a {
     }
 
         nav .links ul li:hover {
-            border-bottom: 2px solid  #cb0505;
+            border-bottom: 2px solid  #046c6d;
             width: 120%;
         }
 
@@ -109,14 +124,19 @@ nav .links ul li a {
     nav .links ul li a {
         font-size: 20px;
     }
+
+    header {
+        background-position: center;
+        background-size: cover;
+    }
 }
 
 nav .links ul li .active {
-    color:  #cb0505;
+    color:  #01a7aa;
 }
 
 nav .links ul li a:hover {
-    color: #cb0505;
+    color: #01a7aa;
 }
 
 nav .links ul li .active:hover {
@@ -124,7 +144,7 @@ nav .links ul li .active:hover {
 }
 
 header {
-    background-image: url(../images/back.jpg);
+    background-image: url(../images/Back2.jpg);
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -166,7 +186,7 @@ header .caption h1 {
     line-height: 77px;
     margin: 0 0 10px;
     font-weight: 700;
-    color:  #cb0505;
+    color:  #01a7aa;
 }
 
 header .caption p {
@@ -189,138 +209,161 @@ header .caption span {
     font-size: 26px;
 }
 
-section .container {
+#about .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 150px 30px;
-    position: relative;
+    margin: 110px 30px;
+    width: 95%;
 }
 
-section .container .item {
+#about .container .item {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
+    width: 25%;
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding-right: 10px;
+    padding: 0px;
     height: 370px;
-    right: -125px;
+    right: -80px;
+    margin: auto;
 }
 
 @media screen and (max-width:576px) {
-    section .container {
+    #about .container {
         width: 100%;
         display: flex;
         justify-content: center;
         flex-direction: column;
-        background-color: blue;
-        margin: 50px 0px;
+        margin: 50px 0px 0px;
     }
 
-    section .container .item {
-        width: 100%;
-        background-color: chocolate;
+    #about .container .item {
+        width: 75%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        left: 0px;
+        margin: auto;
         padding: 0;
         position: relative;
         margin: 0;
-        height: 375px;
-        margin-bottom: 10px;
+        height: 370px;
+        margin-bottom: 15px;
     }
 }
 
-section .container .item .image {
-    position: relative; /* Now relative to host the ::after frame */
-    width: 35%;
-    margin-left: 40px;
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    #about .container .item {
+        width: 39%;
+        margin: auto;
+        right: 0;
+        height: 325px;
+    }
+
+    #about .container {
+        padding-top: 50px;
+        display: flex;
+        width: 100%;
+        margin: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+}
+
+#about .container .item .image {
+position: relative;
+    width: 100%;
+    margin: auto;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
     top: 10px;
 }
 
-section .container .item .image::before {
+#about .container .item .image::before {
     content: "";
     position: absolute;
-    top: -20px;
-    left: -195px;
+    top: -17px;
+    left: 0px;
     width: 335px;
-    height: 330px;
+    height: 335px;
     background-color: transparent;
-    border: 9px solid #555555;
+    border: 8px solid #555555;
     border-radius: 5px;
     z-index: 1;
 }
 
 @media screen and (max-width:576px) {
-    section .container .item .image::before {
-        left: -145px;
+    #about .container .item .image::before {
+        left: 10px;
+        margin: auto;
         position: absolute;
         height: 330px;
         top: -15px;
     }
 
-    section .container .item .image img {
-        left: 85px;
+    #about .container .item .image img {
+        margin: auto;
+        left: 0;
+        top: 0px;
     }
 }
 
-
-section .container .item .image img {
+#about .container .item .image img {
     width: 350px;
     height: auto;
     border-radius: 5px;
-    margin-left: 120px;
+    margin-left: auto;
     position: relative;
-    z-index: 1; /* Ensures it appears above the frame */
+    z-index: 1; 
 }
 
-section .container .item .caption {
+#about .container .item .caption {
     background-color: RGBA(0, 0, 0, 0.57);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 350px;
-    height: 350px;
+    height: 351px;
     position: absolute;
     border-radius: 5px;
-    bottom: -350px;
-    left: 160px;
+    bottom: -355px;
+    right: 0;
     transition: all 0.5s ease-in-out;
     z-index: 2;
 }
 
 @media screen and (max-width:576px) {
-    section .container .item .caption {
-        width: 351px;
-        left: 18px;
-        height: 352px;
-        top: 372px;
+    #about .container .item .caption {
+        width: 350px;
+        left: 22px;
+        height: 351px;
+        top: 374px;
     }
 }
 
-section .container .item:hover .caption {
-    transform: translateY(-350px);
+#about .container .item:hover .caption {
+    transform: translateY(-355px);
     z-index: 5;
 }
 
-section .container .item .caption svg {
+#about .container .item .caption svg {
     width: 48px;
     height: auto;
     padding: 15px;
     margin: -6px;
 }
 
-section .container .item .caption svg:hover path {
-    fill: #ff305b;
+#about .container .item .caption svg:hover path {
+    fill: #01a7aa;
 }
 
-section .container .item .caption .uniqe {
+#about .container .item .caption .uniqe {
     width: 43px;
     padding: 12px 15px 12px 15px;
     margin: -5px;
@@ -328,16 +371,16 @@ section .container .item .caption .uniqe {
 }
 
 
-section .container .content{
-    left: -200px;
-    width: 40%;
+#about .container .content{
+    left: 0px;
+    width: 55%;
     position: relative;
     top: 0px;
     padding-top: 10px;
 }
 
 @media screen and (max-width:576px) {
-    section .container .content {
+    #about .container .content {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -346,14 +389,15 @@ section .container .content{
         left: 0px;
         position: relative;
         padding: 10px 5px;
+        margin-bottom: 30px;
     }
 
-    section .container .content h2::before {
-        margin-inline: 130px;
+    #about .container .content h2::before {
+        margin-left: 195px;
     }
 }
 
-section .container .content h2 {
+#about .container .content h2 {
     color: #333333;
     font-family: "Source Sans Pro",sans-serif;
     font-size: 34px;
@@ -365,17 +409,17 @@ section .container .content h2 {
     text-align: start;
 }
 
-section .container .content h2::before {
+#about .container .content h2::before {
     content: "";
     position: absolute;
     top: 8px;
     left: 0px;
     width: 4px;
     height: 25px;
-    background-color: #ff305b;
+    background-color: #01a7aa;
 }
 
-section .container .content p {
+#about .container .content p {
     color: #555555;
     font-family:"Roboto",sans-serif;
     font-size: 16px;
@@ -387,24 +431,97 @@ section .container .content p {
 }
 
 @media screen and (max-width:576px) {
-    section .container .content p {
+    #about .container .content p {
         text-align: center;
-        padding: 0 15px 20px;
+        padding: 0px 15px 20px;
+        font-size: 20px;
+    }
+
+    #about .container .info ul {
+        margin-bottom: 15px;
+    }
+
+    #about .container .info ul li {
+        padding: 0 15px;
+        height: 15px;
+    }
+
+    #about .container .info ul li span {
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    #about .container .btn .btn5 a {
+        font-size: 20px;
     }
 }
 
-section .container .info ul {
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    #about {
+        width: 100%;
+    }
+
+    #about .container .content {
+        margin-left: 20px;
+    }
+
+    #about .container .content p {
+        font-size: 18px;
+        padding-right: 10px;
+    }
+
+    #about .container .item .image {
+        width: 100%;
+    }
+
+    #about .container .item .image img {
+        width: 300px;
+    }
+
+    #about .container .item .image::before {
+        width: 290px;
+        height: 300px;
+        left: 10px;
+    }
+
+    #about .container .item .caption {
+        width: 300px;
+        height: 306px;
+        right: 0;
+    }
+
+    #about .container .info ul li {
+    display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: auto;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #about .container .info ul li span {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    #about .container .btn .btn5 a {
+        font-size: 18px;
+    }
+}
+
+#about .container .info ul {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
     height: 125px;
+    align-items: flex-start;
     width: 100%;
     list-style: none;
     padding: 0;
 }
 
-section .container .info ul li {
+#about .container .info ul li {
     color: #555555;
     font-family:"Roboto",sans-serif;
     font-size: 16px;
@@ -413,63 +530,63 @@ section .container .info ul li {
     font-weight: 400;
 }
 
-section .container .info ul li span {
+#about .container .info ul li span {
     color: #000;
 }
 
-section .container .info ul li a {
+#about .container .info ul li a {
     text-decoration: none;
     color: #555555;
 }
 
-section .container .btn {
+#about .container .btn {
     display: flex;
     flex-direction: row;
 }
 
-section .container .btn button {
+#about .container .btn button {
     padding: 15px 70px;
     border-radius: 5px;
     border: 1px solid transparent;
 }
 
-section .container .btn .btn1 {
-    background-color: #FF305B;
+#about .container .btn .btn1 {
+    background-color: #01a7aa;
     font-size: 16px;
     line-height: 25px;
     margin: 0 10px 0 0;
     padding: 10px 30px;
 }
 
-section .container .btn .btn2 {
-    background-color: #FF305B;
+#about .container .btn .btn2 {
+    background-color: #01a7aa;
     font-size: 16px;
     line-height: 25px;
     margin: 0 10px 0 0 ;
     padding: 10px 30px;
 }
 
-section .container .btn a {
+#about .container .btn a {
     color: white;
     text-decoration: none;
 }
 
-section .container .btn1 svg {
+#about .container .btn1 svg {
     width: 15px;
 }
 
-section .container .btn2 svg {
+#about .container .btn2 svg {
     position: relative;
     width: 15px;
     top: 3px;
 }
 
-section .container .btn .btn5 {
+#about .container .btn .btn5 {
     transition: all 0.5s ease;
 }
 
-section .container .btn .btn5:hover{
-    background-color: #EC2403;
+#about .container .btn .btn5:hover{
+    background-color: #005f60;
     cursor: pointer;
 }
 
@@ -514,7 +631,7 @@ section .container .btn .btn5:hover{
     left: 75px;
     width: 60px;
     height: 1px;
-    background-color: #FF305B;
+    background-color: #01a7aa;
 }
 
 .service .container .title h2::after {
@@ -524,22 +641,23 @@ section .container .btn .btn5:hover{
     left: 75px;
     width: 60px;
     height: 1px;
-    background-color: #FF305B;
+    background-color: #01a7aa;
 }
 
 .service .container .title div {
     width: 160px;
     height: 1px;
     position: absolute;
-    background-color: #FF305B;
+    background-color: #01a7aa;
     top: 45px;
     left: 30px;
 }
 
 .service .container .text {
     display: flex;
+    width: 90%;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     padding: 20px;
 }
 
@@ -593,6 +711,107 @@ section .container .btn .btn5:hover{
     color: #555555;
 }
 
+@media screen and (max-width:576px) {
+    .service .container {
+        margin-top: 0px;
+        padding-top: 45px;
+        width: 100%;
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+    }
+
+    .service .container .text .caption {
+        padding-top: 25px;
+    }
+
+    .service .container .title h2{
+        margin: 0px 0 10px;
+        padding: 0 0 20px;
+    }
+
+    .service .container .title h2::after {
+        bottom: 10px;
+    }
+
+    .service .container .text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .service .container .text .caption svg {
+        width: 60px;
+    }
+
+    .service .container .text .caption .javescript {
+        width: 60px;
+    }
+
+    .service .container .text .caption .react {
+        width: 70px;
+    }
+
+    .service .container .text .caption h3 {
+        font-size: 25px;
+        margin: 10px 0 15px;
+}
+
+    .service .container .text p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px){
+    .service .container {
+        margin-bottom: 40px;
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+
+    .service .container .text {
+        width: 100%;
+    }
+
+    .service .container .text .caption {
+        width: 100%;
+        height: auto;
+    }
+
+    .service .container .title h2{
+        margin: 0px 0 10px;
+        padding: 0 0 20px;
+    }
+
+    .service .container .title h2::after {
+        bottom: 10px;
+    }
+
+    .service .container .text .caption svg {
+        width: 45px;
+    }
+
+    .service .container .text .caption .javescript {
+        width: 50px;
+    }
+
+    .service .container .text .caption .react {
+        width: 55px;
+    }
+
+    .service .container .text .caption h3 {
+        font-size: 22px;
+        margin: 10px 0 15px;
+}
+
+    .service .container .text p {
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+/* ##################################################### */
 
 .portfolio .container {
     display: flex;
@@ -625,7 +844,7 @@ section .container .btn .btn5:hover{
     width: 160px;
     height: 1px;
     position: absolute;
-    background-color: #FF305B;
+    background-color: #01a7aa;
     top: 45px;
     left: 30px;
 }
@@ -637,7 +856,7 @@ section .container .btn .btn5:hover{
     left: 75px;
     width: 60px;
     height: 1px;
-    background-color: #FF305B;
+    background-color: #01a7aa;
 }
 
 .portfolio .container .title h2::after {
@@ -647,7 +866,7 @@ section .container .btn .btn5:hover{
     left: 75px;
     width: 60px;
     height: 1px;
-    background-color: #FF305B;
+    background-color: #01a7aa;
 }
 
 .portfolio .container .btns {
@@ -676,7 +895,7 @@ section .container .btn .btn5:hover{
 }
 
 .portfolio .container .btns .active a {
-    color: #FF305B;
+    color: #01a7aa;
 }
 
 .portfolio .container .images {
@@ -721,7 +940,7 @@ section .container .btn .btn5:hover{
     position: absolute;
     bottom: 40px;
     right: 10px;
-    color: #FF305B;
+    color: #01a7aa;
     opacity: 0;
     transition: opacity 0.4s ease; 
 }
@@ -730,6 +949,84 @@ section .container .btn .btn5:hover{
     opacity: 1;
 }
 
+@media screen and (max-width:576px) {
+    .portfolio .container{
+        padding-bottom: 40px;
+    }
+
+    .portfolio .container .title h2::after {
+        bottom: 49px;
+    }
+
+    .portfolio .container .btns {
+        font-size: 30px;
+    }
+
+    .portfolio .container .btns .btn {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+        align-content: center;
+    }
+
+    .portfolio .container .images {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .portfolio .container .images .image img {
+        width: 415px;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    .portfolio .container{
+        padding-bottom: 40px;
+    }
+
+    .portfolio .container .title h2::after {
+        bottom: 49px;
+    }
+
+    .portfolio .container .btns {
+        font-size: 30px;
+    }
+
+    .portfolio .container .btns .btn {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+        align-content: center;
+    }
+
+    .portfolio .container .images {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .portfolio .container .images .image {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        justify-content: space-between;
+    }
+
+    .portfolio .container .images .image img {
+        width: 350px;
+    }
+
+    .portfolio .container .images .image div {
+        width: 98%;
+    }
+}
+
+/* ##################################################### */
 .prob {
     display: flex;
     justify-content: center;
@@ -754,7 +1051,7 @@ section .container .btn .btn5:hover{
 
 
 .prob .container .contant .icon i {
-    color: #FF305B;
+    color: #056063;
     line-height: 25px;
     margin: 0 0 10px;
 }
@@ -772,6 +1069,54 @@ section .container .btn .btn5:hover{
     line-height: 17.6px;
     font-weight:600;
 }
+
+@media screen and (max-width:576px) {
+    .prob .container {
+        width: 100%;
+        padding: 50px 0;
+    }
+
+    .prob {
+        margin-bottom: 40px;
+    }
+
+    .prob .container .contant .icon i {
+        width: 80px;
+    }
+
+    .prob .container .contant h3 {
+        font-size: 22px;
+    }
+
+    .prob .container .contant h5 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    .prob .container {
+        width: 100%;
+        padding: 50px 0;
+    }
+
+    .prob {
+        margin-bottom: 40px;
+    }
+
+    .prob .container .contant .icon i {
+        width: 80px;
+    }
+
+    .prob .container .contant h3 {
+        font-size: 22px;
+    }
+
+    .prob .container .contant h5 {
+        font-size: 16px;
+    }
+}
+
+/* ####################################################### */
 
 .feedback {
     margin-bottom: 90px;
@@ -807,7 +1152,7 @@ section .container .btn .btn5:hover{
     width: 160px;
     height: 1px;
     position: absolute;
-    background-color: #FF305B;
+    background-color: #01a7aa;
     top: 45px;
     left: 65px;
 }
@@ -819,7 +1164,7 @@ section .container .btn .btn5:hover{
     left: 110px;
     width: 60px;
     height: 1px;
-    background-color: #FF305B;
+    background-color: #01a7aa;
 }
 
 .feedback .container .title h2::after {
@@ -829,7 +1174,7 @@ section .container .btn .btn5:hover{
     left: 110px;
     width: 60px;
     height: 1px;
-    background-color: #FF305B;
+    background-color: #01a7aa;
 }
 
 .feedback .container .info {
@@ -863,7 +1208,7 @@ section .container .btn .btn5:hover{
     height: 0;
     border: 90px solid;
     border-radius: 5px;
-    border-color: #FF305B transparent transparent #FF305B;
+    border-color: #017e80 transparent transparent #017e80;
     z-index: -1;
 }
 
@@ -905,16 +1250,40 @@ section .container .btn .btn5:hover{
     width: 20px;
     height: 8px;
     border-radius: 10px;
-    background-color: #FF305B;
+    background-color: #01a7aa;
 }
 
 .feedback .container .doted .dot {
     margin: 10px 4px;
     width: 8px;
     height: 8px;
-    border: 1px solid #FF305B;
+    border: 1px solid #01a7aa;
     border-radius: 50%;
 }
+
+@media screen and (max-width:576px) {
+    .feedback .container {
+        margin-top: 0;
+    }
+
+    .feedback .container .info {
+        width: 95%;
+        padding: 20px 0px;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+        .feedback .container {
+        margin-top: 0;
+    }
+
+    .feedback .container .info {
+        width: 80%;
+        padding: 30px 0px;
+    }
+}
+
+/* #################################################### */
 
 .blog {
     background-color: #F1F1F1;
@@ -952,29 +1321,29 @@ section .container .btn .btn5:hover{
     width: 145px;
     height: 1px;
     position: absolute;
-    background-color: #FF305B;
+    background-color: #01a7aa;
     top: 45px;
-    left: 0;
+    left: 40px;
 }
 
 .blog .container .title h2::before {
     content: "";
     position: absolute;
     top: 41px;
-    left: 43px;
+    left: 80px;
     width: 60px;
     height: 1px;
-    background-color: #FF305B;
+    background-color: #01a7aa;
 }
 
 .blog .container .title h2::after {
     content: "";
     position: absolute;
     bottom: 35px;
-    left: 43px;
+    left: 80px;
     width: 60px;
     height: 1px;
-    background-color: #FF305B;
+    background-color: #01a7aa;
 }
 
 .blog .container .about {
@@ -1018,7 +1387,7 @@ section .container .btn .btn5:hover{
 }
 
 .blog .container .about .info .content a:hover {
-    color: #FF305B;
+    color: #01a7aa;
 }
 
 .blog .container .about .info .content p {
@@ -1045,8 +1414,116 @@ section .container .btn .btn5:hover{
 }
 
 .blog .container .about .info .content .lin2:hover {
-    color: #FF305B;
+    color: #01a7aa;
 }
+
+@media screen and (max-width:576px) {
+    .blog .container {
+        width: 100%;
+        padding-block: 40px
+    }
+
+    .blog .container .about {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .blog .container .about .info {
+        width: 100%;
+        padding: 20px 50px;
+    }
+
+    .blog .container .about .info .content .time {
+        font-size: 19px;
+    }
+
+    .blog .container .about .info .content p {
+        margin: 10px 0 15px;
+        font-size: 20px;
+    }
+
+    .blog .container .about .info .content a {
+        font-size: 26px;
+    }
+
+    .blog .container .about .info .content .lin2 {
+        width: 40%;
+        font-size: 20px;
+    }
+
+    .blog .container .about .info .content .lin2 i {
+        width: 35px;
+        height: 0px;
+    }
+
+    .blog .container .about .info img {
+        width: 100%;
+    }
+
+    .blog .container .about .info .image .imovideo {
+        width: 100%;
+        border: 1px solid #7777776e;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px){
+    .blog .container {
+        width: 100%;
+        padding-block: 40px
+    }
+
+    .blog .container .about {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .blog .container .about .info {
+        width: 75%;
+        padding: 20px 60px;
+    }
+
+    .blog .container .about .info .content .time {
+        font-size: 19px;
+    }
+
+    .blog .container .about .info .content p {
+        margin: 10px 0 15px;
+        font-size: 20px;
+    }
+
+    .blog .container .about .info .content a {
+        font-size: 26px;
+    }
+
+    .blog .container .about .info .content .lin2 {
+        width: 40%;
+        font-size: 20px;
+    }
+
+    .blog .container .about .info .content .lin2 i {
+        width: 35px;
+        height: 0px;
+    }
+
+    .blog .container .about .info img {
+        width: 100%;
+    }
+
+    .blog .container .about .info .image .imovideo {
+        width: 100%;
+        border: 1px solid #7777776e;
+        border-radius: 5px;
+    }
+}
+
+/* ########################################################## */
 
 .contact {
     background-color: #FFFFFF;
@@ -1083,7 +1560,7 @@ section .container .btn .btn5:hover{
     width: 160px;
     height: 1px;
     position: absolute;
-    background-color: #FF305B;
+    background-color: #01a7aa;
     top: 45px;
     left: 10px;
 }
@@ -1095,7 +1572,7 @@ section .container .btn .btn5:hover{
     left: 60px;
     width: 60px;
     height: 1px;
-    background-color: #FF305B;
+    background-color: #01a7aa;
 }
 
 .contact .container .title h2::after {
@@ -1105,7 +1582,7 @@ section .container .btn .btn5:hover{
     left: 60px;
     width: 60px;
     height: 1px;
-    background-color: #FF305B;
+    background-color: #01a7aa;
 }
 
 .contact .container .form {
@@ -1153,8 +1630,8 @@ section .container .btn .btn5:hover{
 }
 
 .contact .container .form .info input:focus {
-    box-shadow: 1px 1px 3px #b90000;
-    border: 1px solid #b90000;
+    box-shadow: 1px 1px 3px #046c6d;
+    border: 1px solid #046c6d;
     outline: none;
 }
 
@@ -1172,8 +1649,8 @@ section .container .btn .btn5:hover{
 }
 
 .contact .container .form .subject input:focus {
-    box-shadow: 1px 1px 3px #b90000;
-    border: 1px solid #b90000;
+    box-shadow: 1px 1px 3px #046c6d;
+    border: 1px solid #046c6d;
     outline: none;
 }
 
@@ -1192,8 +1669,8 @@ section .container .btn .btn5:hover{
 }
 
 .contact .container .form .textarea textarea:focus {
-    box-shadow: 1px 1px 3px #b90000;
-    border: 1px solid #b90000;
+    box-shadow: 1px 1px 3px #046c6d;
+    border: 1px solid #046c6d;
     outline: none;
 }
 
@@ -1206,7 +1683,7 @@ section .container .btn .btn5:hover{
     font-family:"Roboto",sans-serif;
     line-height: 38px;
     padding: 0 20px;
-    background-color: #FF305B;
+    background-color: #01a7aa;
     border-radius: 5px;
     border: 1px solid transparent;
     text-transform: uppercase;
@@ -1214,9 +1691,87 @@ section .container .btn .btn5:hover{
 }
 
 .contact .container .form .button button:hover {
-    background-color: #EC2403;
+    background-color: #005f60;
     cursor: pointer;
 }
+
+@media screen and (max-width:576px) {
+    .contact {
+        margin-bottom: 80px;
+    }
+
+    .contact .container {
+        margin-top: 40px;
+    }
+
+    .contact .container .form {
+        width: 100%;
+    }
+
+    .contact .container .form .info .name input {
+        width: 95%;
+        font-size: 18px;
+    }
+
+    .contact .container .form .info .email input {
+        width: 92%;
+        font-size: 18px;
+    }
+
+    .contact .container .form .subject input {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .contact .container .form .textarea textarea {
+        font-size: 18px;
+    }
+
+    .contact .container .form .button button {
+        font-size: 18px;
+        padding: 5px 20px;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    .contact {
+        margin-bottom: 80px;
+    }
+
+    .contact .container {
+        margin-top: 40px;
+    }
+
+    .contact .container .form {
+        width: 100%;
+    }
+
+    .contact .container .form .info .name input {
+        width: 95%;
+        font-size: 18px;
+    }
+
+    .contact .container .form .info .email input {
+        width: 95%;
+        font-size: 18px;
+    }
+
+    .contact .container .form .subject input {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .contact .container .form .textarea textarea {
+        font-size: 18px;
+    }
+
+    .contact .container .form .button button {
+        font-size: 18px;
+        padding: 5px 20px;
+    }
+}
+
+/* #################################################### */
 
 footer {
     background-color: #333333;
@@ -1252,7 +1807,7 @@ footer .container .icons ul li i {
 }
 
 footer .container .icons ul li i:hover {
-    color: #FF305B;
+    color: #01a7aa;
 }
 
 footer .container p {
@@ -1263,10 +1818,36 @@ footer .container p {
 }
 
 footer .container p a {
-    color: #FF305B;
+    color: #01a7aa;
     text-decoration: none;
 }
 
 footer .container p a:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width:576px) {
+    footer .container .icons ul li i {
+        width: 65px;
+        padding: 0 25px;
+        font-size: 25px;
+    }
+
+    footer .container p {
+        font-size: 18px;
+        padding: 15px 20px 25px;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px){
+    footer .container .icons ul li i {
+        width: 65px;
+        padding: 0 25px;
+        font-size: 25px;
+    }
+
+    footer .container p {
+        font-size: 18px;
+    padding: 10px 20px 40px;
+    }
 }
