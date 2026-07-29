@@ -1,0 +1,322 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%; /* Changed from #050816 to match screenshots */
+  padding-top: 0;
+  transition: padding-top 0.35s ease, background 0.35s ease;
+  overflow: visible; /* Changed to visible so mobile panel can float */
+}
+
+.navbar.scrolled {
+  padding-top: 14px;
+  background: transparent;
+}
+
+.progressTrack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 2;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b5cf6, #38bdf8);
+  transition: width 0.1s linear;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 76px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+  transition: max-width 0.35s ease, height 0.35s ease, padding 0.35s ease,
+    background 0.35s ease, border-color 0.35s ease, border-radius 0.35s ease,
+    box-shadow 0.35s ease, opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+/* Hides the main navbar when mobile menu is open */
+.innerHidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.navbar.scrolled .inner {
+  max-width: 980px;
+  height: 66px;
+  padding: 0 24px;
+  background: rgba(10, 10, 26, 0.55);  /* Changed to match new background */
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 12px 40px -14px rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.logoDot {
+  background: linear-gradient(120deg, #a78bfa, #38bdf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-left: auto;
+}
+
+.link {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #b7bccb;
+  text-decoration: none;
+  position: relative;
+  padding: 6px 2px;
+  transition: color 0.2s ease;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(120deg, #a78bfa, #38bdf8);
+  transition: right 0.25s ease;
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+.link:hover::after {
+  right: 0;
+}
+
+.linkActive {
+  color: #ffffff;
+}
+
+.linkActive::after {
+  right: 0;
+}
+
+.cta {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #8b5cf6, #38bdf8);
+  box-shadow: 0 8px 24px -8px rgba(139, 92, 246, 0.6);
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-left: 12px;
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px -6px rgba(139, 92, 246, 0.75);
+}
+
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 8px;
+  color: #ffffff;
+}
+
+/* ===== MOBILE PANEL (Floating Card) ===== */
+.mobilePanel {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  right: 16px;
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.mobilePanelOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mobilePanelContent {
+  background: linear-gradient(135deg, rgba(30, 27, 75, 0.95) 0%, rgba(10, 10, 26, 0.98) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.mobileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.closeBtn:hover {
+  color: #a78bfa;
+  transform: rotate(90deg);
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobileLink {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #b7bccb;
+  text-decoration: none;
+  padding: 16px 20px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.mobileLink:hover {
+  background: rgba(139, 92, 246, 0.1);
+  color: #ffffff;
+}
+
+.mobileLink.linkActive {
+  color: #ffffff;
+  background: rgba(139, 92, 246, 0.15);
+}
+
+.mobileCta {
+  margin-top: 16px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #8b5cf6, #38bdf8);
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.mobileCta:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .links,
+  .cta {
+    display: none;
+  }
+  .menuToggle {
+    display: inline-flex;
+  }
+  .inner {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobilePanel {
+    top: 16px;
+    left: 12px;
+    right: 12px;
+  }
+  .mobilePanelContent {
+    padding: 20px;
+  }
+  .mobileLink {
+    font-size: 1rem;
+    padding: 14px 16px;
+  }
+}
+
+/* Add to the end of the file */
+
+/* ===== HIDE NAVBAR WHEN MODAL IS OPEN ===== */
+.navbarHidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.navbarHidden .inner {
+  opacity: 0 !important;
+  transform: translateY(-10px) !important;
+}
+
+.navbarHidden .mobilePanel {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-20px) !important;
+}
+
+.navbarHidden .progressTrack {
+  opacity: 0 !important;
+}

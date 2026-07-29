@@ -1,0 +1,370 @@
+/* ===== CONTACT SECTION ===== */
+.contactSection {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 32px 100px;
+}
+
+.starfield::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.tag {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--cyan-primary, #06b6d4);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: var(--text-white, #ffffff);
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  color: var(--text-muted, #94a3b8);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* ===== CONTACT GRID ===== */
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== CONTACT CARD ===== */
+.contactCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 28px 10px 24px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+  cursor: default;
+}
+
+.contactCard:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(167, 139, 250, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.contactCard:hover .iconCircle {
+  transform: scale(1.05);
+}
+
+/* Card Glow */
+.cardGlow {
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.contactCard:hover .cardGlow {
+  opacity: 1;
+}
+
+/* ===== ICON ===== */
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.iconCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.iconCircle svg {
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
+}
+
+/* ===== CARD CONTENT ===== */
+.cardContent {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contactLabel {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-muted, #94a3b8);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.contactValue {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-white, #ffffff);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+  word-break: break-all;
+}
+
+.contactValue:hover {
+  color: #a78bfa;
+}
+
+/* ===== EXTERNAL ICON ===== */
+.externalIcon {
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.contactValue:hover .externalIcon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== EMAIL BADGE ===== */
+.emailBadge {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: #06b6d4;
+  background: rgba(6, 182, 212, 0.1);
+  padding: 2px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  margin-left: 8px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  vertical-align: middle;
+}
+
+.contactCard:hover .emailBadge {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* ===== FOOTER NOTE ===== */
+.footerNote {
+  text-align: center;
+  margin-top: 48px;
+  padding: 20px;
+}
+
+.footerNote p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: var(--text-muted, #94a3b8);
+  opacity: 0.7;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .contactGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 60px 20px 80px;
+  }
+
+  .header {
+    margin-bottom: 48px;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    padding: 0 16px;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    gap: 16px;
+  }
+
+  .contactCard {
+    padding: 22px 20px 20px 20px;
+    gap: 16px;
+  }
+
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .iconCircle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .iconCircle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contactValue {
+    font-size: 0.88rem;
+  }
+
+  .emailBadge {
+    font-size: 0.5rem;
+    padding: 1px 8px;
+    margin-left: 6px;
+  }
+
+  .footerNote p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactSection {
+    padding: 40px 16px 60px;
+  }
+
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .subtitle {
+    font-size: 0.88rem;
+  }
+
+  .contactCard {
+    padding: 18px 16px 16px 16px;
+    gap: 14px;
+    border-radius: 16px;
+  }
+
+  .iconWrapper {
+    width: 44px;
+    height: 44px;
+  }
+
+  .iconCircle {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .iconCircle svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .contactLabel {
+    font-size: 0.6rem;
+  }
+
+  .contactValue {
+    font-size: 0.82rem;
+    word-break: break-all;
+  }
+
+  .externalIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .emailBadge {
+    font-size: 0.45rem;
+    padding: 1px 6px;
+    margin-left: 4px;
+  }
+
+  .footerNote {
+    margin-top: 36px;
+  }
+
+  .footerNote p {
+    font-size: 0.85rem;
+  }
+}
