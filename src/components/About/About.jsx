@@ -27,7 +27,7 @@ export default function About() {
           </div>
           <div className={styles.stats}>
             <div className={styles.statCard}>
-              <span className={styles.statNumber}>4+</span>
+              <span className={styles.statNumber}>6+</span>
               <span className={styles.statLabel}>PROJECTS COMPLETED</span>
             </div>
             <div className={styles.statCard}>
