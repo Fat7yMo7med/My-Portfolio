@@ -23,8 +23,8 @@ export default function Contact() {
         </svg>
       ),
       label: "Phone",
-      value: "+20 1272060977",
-      href: "tel:+201272060977",
+      value: "+20 1558815893",
+      href: "tel:+201558815893",
       color: "#34d399",
     },
     {
@@ -64,12 +64,30 @@ export default function Contact() {
       external: true,
       color: "#6e7681",
     },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+        </svg>
+      ),
+      label: "WhatsApp",
+      value: "+20 1558815893",
+      href: "https://wa.me/201558815893?text=Hi%20Fathy%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.",
+      external: true,
+      color: "#25D366",
+    },
   ];
 
   // Handle email click - open in Gmail
   const handleEmailClick = (e, item) => {
     e.preventDefault();
     window.open(item.gmail, '_blank');
+  };
+
+  // Handle WhatsApp click
+  const handleWhatsAppClick = (e, item) => {
+    e.preventDefault();
+    window.open(item.href, '_blank');
   };
 
   return (
@@ -107,6 +125,8 @@ export default function Contact() {
                     onClick={(e) => {
                       if (item.gmail) {
                         handleEmailClick(e, item);
+                      } else if (item.label === "WhatsApp") {
+                        handleWhatsAppClick(e, item);
                       }
                     }}
                   >
@@ -121,9 +141,6 @@ export default function Contact() {
                   </a>
                 ) : (
                   <span className={styles.contactValue}>{item.value}</span>
-                )}
-                {item.gmail && (
-                  <span></span>
                 )}
               </div>
               <div 
